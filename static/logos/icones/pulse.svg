@@ -1,0 +1,13 @@
+<!-- Símbolo do Pulse — recorte do símbolo de /logos/pulse.svg, sem a marca
+     escrita. O `path` e o gradiente são cópia literal do arquivo completo; só
+     o viewBox mudou, para enquadrar o símbolo (que já nasce em 0 0 207 207).
+     Trocou a logo, troque este recorte junto. -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 207 207" fill="none" role="img" aria-label="Símbolo do Pulse">
+  <path d="M103.5 0C160.661 0 207 46.3385 207 103.5C207 160.661 160.661 207 103.5 207C46.3385 207 0 160.661 0 103.5C0 46.3385 46.3385 0 103.5 0ZM124.752 44.6006C120.112 42.8194 114.906 45.137 113.125 49.7773L74.2051 151.167C72.4238 155.807 74.7414 161.014 79.3818 162.795C84.022 164.576 89.2274 162.258 91.0088 157.618L129.929 56.2275C131.71 51.5873 129.392 46.382 124.752 44.6006ZM73.7812 77.417C69.1587 75.5911 63.931 77.8582 62.1045 82.4805L45.2568 125.124C43.4306 129.747 45.6978 134.975 50.3203 136.802C54.9428 138.628 60.1715 136.361 61.998 131.739L78.8447 89.0957C80.671 84.473 78.4039 79.2435 73.7812 77.417ZM157.115 64.0537C153.008 62.4315 148.363 64.4461 146.74 68.5527L129.894 111.196C128.271 115.303 130.286 119.948 134.393 121.57C138.499 123.192 143.144 121.179 144.767 117.072L161.614 74.4287C163.236 70.322 161.222 65.6765 157.115 64.0537Z" fill="url(#pulse)" />
+  <defs>
+  <linearGradient id="pulse" x1="-38" y1="164.5" x2="150.5" y2="77.5" gradientUnits="userSpaceOnUse">
+<stop stop-color="#FB923C"/>
+<stop offset="1" stop-color="#ED407D"/>
+</linearGradient>
+  </defs>
+</svg>

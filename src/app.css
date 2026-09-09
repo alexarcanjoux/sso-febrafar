@@ -1,0 +1,32 @@
+/* =========================================================
+   SSO Febrafar — folha de estilo raiz.
+
+   Os tokens vivem em:
+     src/lib/styles/foundations.css  (base: escalas, spacing, radius, motion)
+     src/lib/themes/febrafar.css     (marca default do guarda-chuva)
+     src/lib/themes/produtos.css     (marca por produto, escopo [data-produto])
+
+   A ordem importa — o tema sobrescreve o fallback da base, e o escopo
+   do produto sobrescreve o tema default.
+   ========================================================= */
+@import 'tailwindcss';
+@import './lib/styles/foundations.css';
+@import './lib/themes/febrafar.css';
+@import './lib/themes/produtos.css';
+
+/* Resets — força a fonte do DS em elementos com defaults do navegador. */
+code,
+kbd,
+samp,
+pre {
+  font-family: inherit;
+}
+
+/* Fonte e fundo base da aplicação. */
+html,
+body {
+  font-family: var(--font-sans);
+  background-color: var(--color-suporte-branco);
+  color: var(--color-slate-900);
+  margin: 0;
+}

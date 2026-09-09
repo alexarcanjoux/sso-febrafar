@@ -1,0 +1,138 @@
+/* =========================================================
+   Temas por produto conectado ao SSO.
+
+   Como funciona: no Tailwind v4 as utilitárias compilam para
+   `var(--color-brand-500)`, então redefinir a variável num escopo
+   re-tematiza tudo que está dentro dele. O AuthShell escreve
+   `data-produto="<id>"` no elemento raiz da tela e a marca inteira troca —
+   botão, foco, link, acentos do painel — sem nenhuma classe condicional.
+
+   Estes blocos são CSS puro de propósito (não `@theme`): `@theme` só
+   declara tokens no `:root`, quem precisa cascatear é CSS normal.
+
+   Para conectar um produto novo:
+     1. adicione a escala aqui, sob `[data-produto='<id>']`;
+     2. registre o produto em src/lib/produtos.js;
+     3. coloque a logo em static/logos/<id>.svg.
+
+   ⚠️ `--color-brand-contraste` é o texto que vai EM CIMA de brand-500
+   (botão primário, checkbox marcado). A REGRA É BRANCO: quando a marca tem um
+   tom escuro que sirva de brand-500, é nele que a rampa ancora, e o rótulo do
+   botão fica branco (ver Trade). Tom escuro aqui é o último recurso, para
+   marca que não tem esse tom — branco sobre o âmbar do PEC dá 2.15:1 e reprova
+   em qualquer critério.
+   ========================================================= */
+
+/* ---------- PEC — âmbar #EFA119 ---------- */
+[data-produto='pec'] {
+  --color-brand-50: #fef8ee;
+  --color-brand-100: #fdefd6;
+  --color-brand-200: #fadfb0;
+  --color-brand-300: #f7cc80;
+  --color-brand-400: #f3b74f;
+  --color-brand-500: #efa119;
+  --color-brand-600: #d58d0e;
+  --color-brand-700: #b17409;
+  --color-brand-800: #905f09;
+  --color-brand-900: #78500a;
+  --color-brand-950: #4e3406;
+  --color-brand: #efa119;
+  /* Marca clara: texto escuro sobre brand-500 (8.32:1). */
+  --color-brand-contraste: #2b1d02;
+}
+
+/* ---------- Fideliza Mais — roxo #9358FA ---------- */
+[data-produto='fideliza-mais'] {
+  --color-brand-50: #f6f3ff;
+  --color-brand-100: #eee8ff;
+  --color-brand-200: #dfd5ff;
+  --color-brand-300: #c8b3ff;
+  --color-brand-400: #ad88fd;
+  --color-brand-500: #9358fa;
+  --color-brand-600: #8735f2;
+  --color-brand-700: #7823de;
+  --color-brand-800: #641dba;
+  --color-brand-900: #531a98;
+  --color-brand-950: #330e67;
+  --color-brand: #9358fa;
+  --color-brand-contraste: #ffffff;
+}
+
+/* ---------- Pulse Febrafar — rosa #ED407D ----------------------------------
+
+   O símbolo da logo é preenchido por um linear do laranja #FB923C ao rosa
+   #ED407D, mas a RAMPA É SÓ O ROSA: o laranja vive dentro do símbolo e não sai
+   de lá. O painel de acesso, o botão, o foco e os links são a cor da marca —
+   levar o laranja para o degradê do painel faz a tela deixar de ser rosa, que
+   é a cor que o produto tem. */
+[data-produto='pulse'] {
+  --color-brand-50: #fff1f6;
+  --color-brand-100: #ffe4ef;
+  --color-brand-200: #fecdde;
+  --color-brand-300: #fda4c4;
+  --color-brand-400: #fb6fa3;
+  --color-brand-500: #ed407d;
+  --color-brand-600: #db2f70;
+  --color-brand-700: #b91f59;
+  --color-brand-800: #9a1c4c;
+  --color-brand-900: #831b42;
+  --color-brand-950: #4a0821;
+  --color-brand: #ed407d;
+  --color-brand-contraste: #ffffff;
+}
+
+/* ---------- Orion — roxo #7544DF ------------------------------------------
+
+   ⚠️ ROXO COMO O FIDELIZA MAIS, e mais fundo que ele (#7544DF contra #9358FA).
+   São dois produtos vizinhos na roda de cor: numa tela sozinha cada um se
+   sustenta, mas lado a lado — no índice, por exemplo — a diferença é de meio
+   tom. Se algum dia isso atrapalhar quem usa os dois, o ajuste é aqui, e não
+   no componente. */
+[data-produto='orion'] {
+  --color-brand-50: #f5f2fd;
+  --color-brand-100: #ebe4fb;
+  --color-brand-200: #dbcdf8;
+  --color-brand-300: #c0a9f2;
+  --color-brand-400: #9d79eb;
+  --color-brand-500: #7544df;
+  --color-brand-600: #6027da;
+  --color-brand-700: #5120ba;
+  --color-brand-800: #441b9d;
+  --color-brand-900: #391784;
+  --color-brand-950: #250e54;
+  --color-brand: #7544df;
+  /* Branco sobre brand-500: 5.76:1. */
+  --color-brand-contraste: #ffffff;
+}
+
+/* ---------- Trade — verde #198837 -----------------------------------------
+
+   A logo tem três verdes: #71B62E e #2CA637 nos losangos de fora e #198837 no
+   miolo, onde eles se cruzam.
+
+   ⚠️ A RAMPA NASCE DO MAIS ESCURO DOS TRÊS, E O MOTIVO É O BOTÃO. O rótulo
+   sobre a marca é branco sempre que a marca aceita branco — e o verde do meio
+   (#2CA637) não aceita: dá 3.17:1, reprova. O #198837 dá 4.55:1 e passa. Como
+   os três verdes são da própria logo, a marca continua sendo ela mesma, só
+   ancorada no tom que deixa o botão legível — mais barato que trocar a cor do
+   rótulo por causa de um passo de luminosidade.
+
+   Isso vale enquanto a marca tiver um tom escuro para ancorar. O PEC não tem:
+   âmbar é âmbar, e lá o rótulo é escuro mesmo. */
+[data-produto='trade'] {
+  --color-brand-50: #eefbf2;
+  --color-brand-100: #daf6e2;
+  --color-brand-200: #b9eec8;
+  --color-brand-300: #8ce3a4;
+  --color-brand-400: #57d178;
+  --color-brand-500: #198837;
+  --color-brand-600: #167831;
+  --color-brand-700: #136629;
+  --color-brand-800: #105623;
+  --color-brand-900: #0d481d;
+  --color-brand-950: #082e13;
+  --color-brand: #198837;
+  /* Branco sobre brand-500: 4.55:1. Os estados de hover/active escurecem
+     (5.58:1 e 7.09:1), então o rótulo só melhora enquanto o botão é usado. */
+  --color-brand-contraste: #ffffff;
+}

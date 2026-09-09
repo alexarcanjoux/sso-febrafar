@@ -1,0 +1,29 @@
+{
+  "name": "sso-febrafar",
+  "version": "0.1.0",
+  "type": "module",
+  "private": true,
+  "description": "SSO Febrafar — telas de acesso (login, recuperação e definição de senha) compartilhadas por todas as soluções Febrafar.",
+  "scripts": {
+    "dev": "vite dev",
+    "build": "vite build",
+    "preview": "vite preview",
+    "prepare": "svelte-kit sync",
+    "check": "svelte-kit sync && svelte-check --tsconfig ./jsconfig.json",
+    "cf:login": "wrangler login",
+    "cf:whoami": "wrangler whoami",
+    "cf:dev": "wrangler dev",
+    "cf:deploy": "npm run build && wrangler deploy"
+  },
+  "devDependencies": {
+    "@sveltejs/adapter-cloudflare": "^7.2.8",
+    "@sveltejs/kit": "^2.59.1",
+    "@sveltejs/vite-plugin-svelte": "^7.1.2",
+    "@tailwindcss/vite": "^4.3.0",
+    "svelte": "^5.55.5",
+    "svelte-check": "^4.4.2",
+    "tailwindcss": "^4.3.0",
+    "vite": "^8.0.12",
+    "wrangler": "^4.95.0"
+  }
+}
